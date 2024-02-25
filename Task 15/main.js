@@ -1,7 +1,5 @@
 // --- Task 15 ---
 
-alert('Hello Eva! Task 15');
-
 // 1. Створити клас Людина.
 
 // Властивості:
@@ -31,3 +29,66 @@ alert('Hello Eva! Task 15');
 // додадити екземпляри класу Людина до екземплярів класу Квартира;
 // екземпляр класу Будинок;
 // додадити екземпляри класу Квартира до екземплярів класу Будинок.
+
+class Person {
+  constructor(name, gender) {
+    this.name = name;
+    this.gender = gender;
+  }
+}
+
+class Apartment {
+  residents = [];
+
+  setResident(person) {
+    this.residents.push(person);
+    console.log(this.residents);
+  }
+}
+
+class House {
+  constructor(maxApartsNum) {
+    this.maxApartsNum = maxApartsNum;
+  }
+  apartsArray = [];
+
+  setApartment(apartment) {
+    if (this.apartsArray.length < this.maxApartsNum) {
+      this.apartsArray[this.apartsArray.length] = apartment;
+    } else {
+      console.log(
+        `Apartment cannot be added to the list - there are no free slots`
+      );
+    }
+  }
+}
+
+const person1 = new Person('Irina', 'female');
+const person2 = new Person('Anna', 'female');
+const person3 = new Person('Oleg', 'male');
+const person4 = new Person('Gleb', 'male');
+const person5 = new Person('Vera', 'female');
+const person6 = new Person('Ignat', 'male');
+
+const apartment1 = new Apartment();
+const apartment2 = new Apartment();
+const apartment3 = new Apartment();
+
+const house1 = new House(2);
+
+console.log(person1);
+console.log(apartment1);
+apartment1.setResident(person3);
+console.log(apartment1);
+apartment2.setResident(person5);
+apartment2.setResident(person6);
+console.log(apartment2);
+apartment3.setResident(person1);
+apartment3.setResident(person2);
+apartment3.setResident(person4);
+console.log(apartment3);
+house1.setApartment(apartment1);
+house1.setApartment(apartment2);
+console.log(house1);
+house1.setApartment(apartment3);
+console.log(house1);
