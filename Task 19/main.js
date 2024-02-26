@@ -1,7 +1,5 @@
 // --- Task 19 ---
 
-alert('Hello Eva! Task 19');
-
 // Дан масив об'єктів. Вивести масив телефонних номерів користувачів,
 // у яких баланс більше 2000 доларів.І знайти суму всіх балансів користувачів
 
@@ -63,18 +61,23 @@ let users = [
 ];
 
 const convertUsersBalance = (us) =>
-  us.map((user) => Number(user.balance.replace(',', '').slice(1)));
+  us.map((user) => {
+    return {
+      ...user,
+      balance: Number(user.balance.replace(',', '').slice(1)),
+    };
+  });
+
 const convertBalances = convertUsersBalance(users);
+console.log(convertBalances);
 
-const usersPhones = convertBalances
-  .map((userBalance, userIndex) => (userBalance > 2000 ? userIndex : undefined))
-  .filter((userIndex) => userIndex !== undefined)
-  .map((userIndex) => users[userIndex].phone);
-
+const usersPhones = convertBalances.flatMap((user) =>
+  user.balance > 2000 ? user.phone : []
+);
 console.log(usersPhones);
 
 const calculateUsersTotalSum = (cb) =>
-  cb.reduce((accum, balance) => accum + balance, 0);
+  cb.reduce((accum, user) => accum + user.balance, 0);
 
 const usersTotalSum = calculateUsersTotalSum(convertBalances);
 
