@@ -61,3 +61,21 @@ let users = [
     address: '314 Dunne Place, Bawcomville, Guam, 9053',
   },
 ];
+
+const convertUsersBalance = (us) =>
+  us.map((user) => Number(user.balance.replace(',', '').slice(1)));
+const convertBalances = convertUsersBalance(users);
+
+const usersPhones = convertBalances
+  .map((userBalance, userIndex) => (userBalance > 2000 ? userIndex : undefined))
+  .filter((userIndex) => userIndex !== undefined)
+  .map((userIndex) => users[userIndex].phone);
+
+console.log(usersPhones);
+
+const calculateUsersTotalSum = (cb) =>
+  cb.reduce((accum, balance) => accum + balance, 0);
+
+const usersTotalSum = calculateUsersTotalSum(convertBalances);
+
+console.log(usersTotalSum);
