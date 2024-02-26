@@ -56,6 +56,10 @@ const calcNumsAverage = function (array) {
 calcNumsAverage(myArray);
 calcNumsAverage(myArray1);
 
+// Это было первое решение, но оно только для целых чисел подходило.
+// Решила оставить для примера. Потом переработала в универсальный вариант.
+// Отфильтровывает все, кроме чисел
+
 // const calcNumsAverage = function (array) {
 //   let sum = 0;
 //   let i = 0;
