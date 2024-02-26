@@ -42,7 +42,6 @@ class Student {
     if (next_index != -1) {
       this.attendance[next_index] = true;
     }
-    console.log(this.attendance);
   }
   absent() {
     const next_index = this.attendance.findIndex((x) => x === undefined);
@@ -65,7 +64,7 @@ class Student {
     const totalDays = this.attendance.filter(
       (elem) => elem !== undefined
     ).length;
-    const averageAttendance = (visitedDays / totalDays).toFixed(1);
+    const averageAttendance = (visitedDays / totalDays).toFixed(2);
     console.log(averageAttendance);
     return averageAttendance;
   }
@@ -94,6 +93,9 @@ const student1 = new Student(
   '1979',
   [100, 95, 98, 100, 84, 96, 100, 94]
 );
+
+console.log(student1.name, student1.surname);
+
 student1.calculateAge();
 student1.getAverageMark();
 student1.present();
@@ -102,7 +104,75 @@ student1.present();
 student1.absent();
 student1.present();
 student1.present();
+student1.present();
+student1.present();
+student1.present();
+student1.present();
+student1.present();
+student1.present();
+student1.present();
+student1.present();
 console.log(student1.attendance);
 
 student1.getAverageAttendance();
 student1.summary();
+
+const student2 = new Student(
+  'Valera',
+  'Taranov',
+  '1994',
+  [93, 74, 80, 95, 68, 84, 99, 82, 90]
+);
+
+console.log(student2.name, student2.surname);
+
+student2.calculateAge();
+student2.getAverageMark();
+student2.present();
+student2.present();
+student2.absent();
+student2.absent();
+student2.absent();
+student2.present();
+student2.absent();
+student2.present();
+student2.present();
+student2.present();
+student2.present();
+console.log(student2.attendance);
+
+student2.getAverageAttendance();
+student2.summary();
+
+const student3 = new Student(
+  'Denis',
+  'Davidov',
+  '1998',
+  [90, 85, 100, 95, 83, 90, 90]
+);
+
+console.log(student3.name, student3.surname);
+
+student3.calculateAge();
+student3.getAverageMark();
+student3.present();
+student3.absent();
+student3.present();
+student3.present();
+student3.present();
+student3.present();
+student3.present();
+student3.present();
+student3.present();
+student3.present();
+student3.present();
+student3.present();
+student3.present();
+student3.present();
+student3.present();
+student3.present();
+student3.present();
+console.log(student3.attendance);
+
+student3.getAverageAttendance();
+student3.summary();
