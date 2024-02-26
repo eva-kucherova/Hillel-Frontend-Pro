@@ -18,19 +18,16 @@ do {
 } while (numIndex < numOfElements);
 alert(`Thanks! Let's look at result`);
 
-console.log(userArray);
 document.getElementById('user_array').innerHTML = userArray;
 
 const sortedArray = userArray.sort(function (a, b) {
   return a - b;
 });
-console.log(sortedArray);
 document.getElementById('sorted_array').innerHTML = sortedArray;
 
 if (userArray.length >= 5) {
   sortedArray.splice(2, 3);
   document.getElementById('cutted_array').innerHTML = sortedArray;
-  console.log(sortedArray);
 } else {
   document.getElementById(
     'cutted_array'
