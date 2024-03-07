@@ -7,7 +7,7 @@ const ghostDiv = document.getElementById('ghost');
 
 form.addEventListener(
   'focus',
-  (event) => {
+  () => {
     ghostDiv.style.visibility = 'visible';
   },
   true
@@ -15,7 +15,7 @@ form.addEventListener(
 
 form.addEventListener(
   'blur',
-  (event) => {
+  () => {
     ghostDiv.style.visibility = 'hidden';
   },
   true
