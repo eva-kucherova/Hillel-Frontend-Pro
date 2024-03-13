@@ -17,3 +17,30 @@ alert('Hello Eva! Task 25');
 //     </li>
 //     <li>3</li>
 // </ul>
+
+const unlist = document.getElementById('ul');
+
+const myArray1 = [1, 2, [1, 2, 3], 3, [4, 5], 4];
+
+function generateList(array) {
+  unlist.innerHTML = '';
+  let i = 0;
+  array.forEach((elem) => {
+    if (!Array.isArray(elem)) {
+      unlist.innerHTML += `
+        <li class="elem"> ${elem}
+        </li>
+    `;
+    } else {
+      i++;
+      elem.forEach((num) => {
+        unlist.innerHTML += `
+        <li class="elem">${i}. ${num}
+        </li>
+    `;
+      });
+    }
+  });
+}
+
+generateList(myArray1);
