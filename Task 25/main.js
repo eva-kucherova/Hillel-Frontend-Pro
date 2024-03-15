@@ -31,11 +31,14 @@ function generateList(array) {
     `;
     } else {
       i++;
+      const extraUl = document.createElement('ul');
+      extraUl.innerHTML = '';
       elem.forEach((num) => {
-        unlist.innerHTML += `
+        extraUl.innerHTML += `
         <li class="elem">${i}. ${num}
         </li>
     `;
+        unlist.append(extraUl);
       });
     }
   });
