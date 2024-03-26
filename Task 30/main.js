@@ -16,17 +16,17 @@
 
 const weatherDatas = document.getElementById('div');
 const xml = new XMLHttpRequest();
-
+const header = document.getElementById('header');
 xml.open(
   'GET',
-  'http://api.openweathermap.org/data/2.5/weather?q=SOFIA&units=metric&APPID=5d066958a60d315387d9492393935c19'
+  'https://api.openweathermap.org/data/2.5/weather?q=SOFIA&units=metric&APPID=5d066958a60d315387d9492393935c19'
 );
 
 xml.send();
 
 xml.addEventListener('load', (event) => {
   const response = JSON.parse(event.target.response);
-
+  header.innerHTML = `Weather in ${response.name}`;
   weatherDatas.innerHTML = '';
   weatherDatas.innerHTML += `Temperature: ${response.main.temp} °C` + '<br>';
   weatherDatas.innerHTML += `Pressure: ${response.main.pressure} hPa` + '<br>';
