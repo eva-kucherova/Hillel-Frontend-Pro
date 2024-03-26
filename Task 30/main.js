@@ -15,7 +15,6 @@
 // http://openweathermap.org/img/w/10d.png
 
 const weatherDatas = document.getElementById('div');
-const header = document.getElementById('header');
 const xml = new XMLHttpRequest();
 
 xml.open(
@@ -24,9 +23,10 @@ xml.open(
 );
 
 xml.send();
+
 xml.addEventListener('load', (event) => {
   const response = JSON.parse(event.target.response);
-  header.innerHTML = `Weather in ${response.name}`;
+
   weatherDatas.innerHTML = '';
   weatherDatas.innerHTML += `Temperature: ${response.main.temp} °C` + '<br>';
   weatherDatas.innerHTML += `Pressure: ${response.main.pressure} hPa` + '<br>';
