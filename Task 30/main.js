@@ -28,16 +28,21 @@ xml.addEventListener('load', (event) => {
   const response = JSON.parse(event.target.response);
   header.innerHTML = `Weather in ${response.name}`;
   weatherDatas.innerHTML = '';
-  weatherDatas.innerHTML += `Temperature: ${response.main.temp} °C` + '<br>';
-  weatherDatas.innerHTML += `Pressure: ${response.main.pressure} hPa` + '<br>';
   weatherDatas.innerHTML +=
-    `Description: ${response.weather[0].description}` + '<br>';
-  +'<br>';
-  weatherDatas.innerHTML += `Humidity: ${response.main.humidity} %` + '<br>';
-  weatherDatas.innerHTML += `Wind speed: ${response.wind.speed} km/h` + '<br>';
-  weatherDatas.innerHTML += `Wind degree: ${response.wind.deg} °` + '<br>';
+    `Temperature: ${response.main.temp} °C` +
+    '<br>' +
+    `Pressure: ${response.main.pressure} hPa` +
+    '<br>' +
+    `Description: ${response.weather[0].description}` +
+    '<br>' +
+    `Humidity: ${response.main.humidity} %` +
+    '<br>' +
+    `Wind speed: ${response.wind.speed} km/h` +
+    '<br>' +
+    `Wind degree: ${response.wind.deg} °` +
+    '<br>';
   const icon = document.createElement('img');
-  icon.src = 'http://openweathermap.org/img/w/01d.png';
+  icon.src = `http://openweathermap.org/img/w/${response.weather[0].icon}.png`;
   const container = document.querySelector('#div');
   container.append(icon);
 });
