@@ -4,10 +4,110 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link stylesheet="styles.css" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <h1>User Form</h1>
+    <form action="#" id="user_form">
+      <label for="first_name" class="input_label"
+        >Enter your first name:
+      </label>
+      <input
+        type="text"
+        class="input"
+        name="first_name"
+        placeholder="First name"
+      /><br />
+
+      <label for="last_name" class="input_label">Enter your last name: </label>
+      <input
+        type="text"
+        class="input"
+        name="last_name"
+        placeholder="Last name"
+      /><br />
+
+      <label for="birthday" class="input_label">Enter your birthday: </label>
+      <input type="date" class="input" name="birthday" />
+      <br />
+
+      <label for="gender" class="input_label">Choose your gender: </label><br />
+      <div class="gender">
+        <input type="radio" id="man" name="gender" value="man" />
+        <label for="man">Man</label><br />
+
+        <input type="radio" id="woman" name="gender" value="woman" />
+        <label for="woman">Woman</label>
+        <br />
+        <input type="radio" id="other" name="gender" value="other" />
+        <label for="other">Other</label>
+        <br />
+      </div>
+
+      <label for="city" class="input_label">Choose your city:</label>
+
+      <select name="city" id="city">
+        <option value="">--Please choose a city--</option>
+        <option value="Burgas">Burgas</option>
+        <option value="Plovdiv">Plovdiv</option>
+        <option value="Sozopol">Sozopol</option>
+        <option value="Sofia">Sofia</option>
+        <option value="Varna">Varna</option></select
+      ><br />
+
+      <label for="address" class="input_label">Enter your address:</label>
+      <input
+        type="text"
+        class="input"
+        name="address"
+        placeholder="Street name, apart. № "
+      />
+      <br />
+      <div name="language">
+        <label for="language" class="input_label"
+          >What languages do you know:</label
+        ><br />
+
+        <input
+          type="checkbox"
+          class="language"
+          id="bulgarian"
+          name="language"
+          value="Bulgarian"
+        />
+        <label for="bulgarian">Bulgarian</label>
+        <br />
+        <input
+          type="checkbox"
+          class="language"
+          id="english"
+          name="language"
+          value="English"
+        />
+        <label for="english">English</label>
+        <br />
+        <input
+          type="checkbox"
+          class="language"
+          id="italian"
+          name="language"
+          value="Italian"
+        />
+        <label for="italian">Italian</label>
+        <br />
+        <input
+          type="checkbox"
+          class="language"
+          id="spanish"
+          name="language"
+          value="Spanish"
+        />
+        <label for="spanish">Spanish</label>
+        <br />
+      </div>
+
+      <button class="button" name="submit" id="'submit">Submit</button>
+    </form>
     <script src="main.js" defer></script>
   </body>
 </html>
